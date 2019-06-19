@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Content_Filtering" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="476,574" sap2010:WorkflowViewState.IdRef="Content Filtering_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ip="clr-namespace:Indico.Pretrained;assembly=Indico.Pretrained" xmlns:ipa="clr-namespace:Indico.Pretrained.Activities;assembly=Indico.Pretrained.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Content_Filtering" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="272,356" sap2010:WorkflowViewState.IdRef="Content Filtering_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ip="clr-namespace:Indico.Pretrained;assembly=Indico.Pretrained" xmlns:ipa="clr-namespace:Indico.Pretrained.Activities;assembly=Indico.Pretrained.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -47,7 +47,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Content Filtering" sap:VirtualizedContainerService.HintSize="436,494" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Content Filtering" sap:VirtualizedContainerService.HintSize="232,276" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="XXX" Name="apiKey" />
       <Variable x:TypeArguments="x:String" Default="sampleImage.jpg" Name="imageFile" />
@@ -58,7 +58,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ipa:IndicoWrapper APIKey="[apiKey]" DisplayName="Indico Auth Wrapper" sap:VirtualizedContainerService.HintSize="414,269" sap2010:WorkflowViewState.IdRef="IndicoWrapper_1" IndicoAPIUrl="https://apiv2.indico.io/">
+    <ipa:IndicoWrapper APIKey="[apiKey]" DisplayName="Indico Auth Wrapper" sap:VirtualizedContainerService.HintSize="210,51" sap2010:WorkflowViewState.IdRef="IndicoWrapper_1" IndicoAPIUrl="https://apiv2.indico.io/">
       <ipa:IndicoWrapper.Body>
         <ActivityAction x:TypeArguments="ip:Application">
           <ActivityAction.Argument>
@@ -74,7 +74,13 @@
           </Sequence>
         </ActivityAction>
       </ipa:IndicoWrapper.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ipa:IndicoWrapper>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="414,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;filtering result: &quot;+result.ToString]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="210,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;filtering result: &quot;+result.ToString]" />
   </Sequence>
 </Activity>

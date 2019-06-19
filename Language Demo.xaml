@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Language_Detection_Demo" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="526,990" sap2010:WorkflowViewState.IdRef="Language Detection Demo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ip="clr-namespace:Indico.Pretrained;assembly=Indico.Pretrained" xmlns:ipa="clr-namespace:Indico.Pretrained.Activities;assembly=Indico.Pretrained.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Language_Detection_Demo" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="262,346" sap2010:WorkflowViewState.IdRef="Language Detection Demo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ip="clr-namespace:Indico.Pretrained;assembly=Indico.Pretrained" xmlns:ipa="clr-namespace:Indico.Pretrained.Activities;assembly=Indico.Pretrained.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
@@ -47,7 +47,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Language Detection Demo" sap:VirtualizedContainerService.HintSize="486,910" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Language Detection Demo" sap:VirtualizedContainerService.HintSize="222,266" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="XXX" Name="apiKey" />
       <Variable x:TypeArguments="x:String" Default="Je voudrais un grand croissant, un café et les indications pour aller à la salle de bain." Name="sampleText" />
@@ -58,7 +58,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ipa:IndicoWrapper APIKey="[apiKey]" DisplayName="Indico Auth Wrapper" sap:VirtualizedContainerService.HintSize="464,279" sap2010:WorkflowViewState.IdRef="IndicoWrapper_1" IndicoAPIUrl="https://apiv2.indico.io/">
+    <ipa:IndicoWrapper APIKey="[apiKey]" DisplayName="Indico Auth Wrapper" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="IndicoWrapper_1" IndicoAPIUrl="https://apiv2.indico.io/">
       <ipa:IndicoWrapper.Body>
         <ActivityAction x:TypeArguments="ip:Application">
           <ActivityAction.Argument>
@@ -74,8 +74,20 @@
           </Sequence>
         </ActivityAction>
       </ipa:IndicoWrapper.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ipa:IndicoWrapper>
-    <If Condition="[results.Count&gt;0]" sap:VirtualizedContainerService.HintSize="464,467" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[results.Count&gt;0]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Single)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="287,319" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[results]">
           <ui:ForEach.Body>

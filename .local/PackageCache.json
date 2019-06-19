@@ -22,23 +22,6 @@
     },
     {
       "Package": {
-        "Id": "UiPath.Mail.Activities",
-        "Version": "1.5.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\torik\\.nuget\\packages\\bouncycastle/1.8.1\\lib/BouncyCastle.Crypto.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\interop.domino.dll/1.0.0\\lib/Interop.Domino.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.Auth.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\uipath.mail.activities/1.5.0\\lib/net452/MailKit.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\uipath.mail.activities/1.5.0\\lib/net452/MimeKit.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\uipath.mail.activities/1.5.0\\lib/net452/UiPath.Mail.Activities.Design.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\uipath.mail.activities/1.5.0\\lib/net452/UiPath.Mail.Activities.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\uipath.mail.activities/1.5.0\\lib/net452/UiPath.Mail.dll"
-      ]
-    },
-    {
-      "Package": {
         "Id": "UiPath.System.Activities",
         "Version": "19.5.0"
       },
@@ -107,12 +90,12 @@
     {
       "Package": {
         "Id": "IndicoPretrained",
-        "Version": "0.1.7104.23068"
+        "Version": "0.2.1"
       },
       "Assemblies": [
-        "C:\\Users\\torik\\.nuget\\packages\\indicopretrained/0.1.7104.23068\\lib/net461/Indico.Pretrained.Activities.Design.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\indicopretrained/0.1.7104.23068\\lib/net461/Indico.Pretrained.Activities.dll",
-        "C:\\Users\\torik\\.nuget\\packages\\indicopretrained/0.1.7104.23068\\lib/net461/Indico.Pretrained.dll",
+        "C:\\Users\\torik\\.nuget\\packages\\indicopretrained/0.2.1\\lib/net461/Indico.Pretrained.Activities.Design.dll",
+        "C:\\Users\\torik\\.nuget\\packages\\indicopretrained/0.2.1\\lib/net461/Indico.Pretrained.Activities.dll",
+        "C:\\Users\\torik\\.nuget\\packages\\indicopretrained/0.2.1\\lib/net461/Indico.Pretrained.dll",
         "C:\\Users\\torik\\.nuget\\packages\\newtonsoft.json/12.0.2\\lib/net45/Newtonsoft.Json.dll"
       ]
     }
@@ -122,11 +105,6 @@
     "AvalonEdit": {
       "Id": "AvalonEdit",
       "Version": "5.0.3",
-      "Dependencies": []
-    },
-    "BouncyCastle": {
-      "Id": "BouncyCastle",
-      "Version": "1.8.1",
       "Dependencies": []
     },
     "ClosedXML": {
@@ -161,18 +139,13 @@
     },
     "IndicoPretrained": {
       "Id": "IndicoPretrained",
-      "Version": "0.1.7104.23068",
+      "Version": "0.2.1",
       "Dependencies": [
         {
           "Item1": "Newtonsoft.Json",
           "Item2": "[12.0.2, )"
         }
       ]
-    },
-    "interop.domino.dll": {
-      "Id": "interop.domino.dll",
-      "Version": "1.0.0",
-      "Dependencies": []
     },
     "Microsoft.AspNet.SignalR.Client": {
       "Id": "Microsoft.AspNet.SignalR.Client",
@@ -183,11 +156,6 @@
           "Item2": "[6.0.4, )"
         }
       ]
-    },
-    "Microsoft.Exchange.WebServices": {
-      "Id": "Microsoft.Exchange.WebServices",
-      "Version": "2.2.0",
-      "Dependencies": []
     },
     "Microsoft.Rest.ClientRuntime": {
       "Id": "Microsoft.Rest.ClientRuntime",
@@ -255,24 +223,6 @@
         },
         {
           "Item1": "SharpZipLib",
-          "Item2": "[1.0.0, )"
-        }
-      ]
-    },
-    "UiPath.Mail.Activities": {
-      "Id": "UiPath.Mail.Activities",
-      "Version": "1.5.0",
-      "Dependencies": [
-        {
-          "Item1": "Microsoft.Exchange.WebServices",
-          "Item2": "[2.2.0, )"
-        },
-        {
-          "Item1": "BouncyCastle",
-          "Item2": "[1.8.1, )"
-        },
-        {
-          "Item1": "interop.domino.dll",
           "Item2": "[1.0.0, )"
         }
       ]

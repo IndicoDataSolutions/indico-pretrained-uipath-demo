@@ -11,15 +11,6 @@
           "lib/Net40/ICSharpCode.AvalonEdit.dll": {}
         }
       },
-      "BouncyCastle/1.8.1": {
-        "type": "package",
-        "compile": {
-          "lib/_._": {}
-        },
-        "runtime": {
-          "lib/BouncyCastle.Crypto.dll": {}
-        }
-      },
       "ClosedXML/0.87.1": {
         "type": "package",
         "dependencies": {
@@ -112,7 +103,7 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
-      "IndicoPretrained/0.1.7104.23068": {
+      "IndicoPretrained/0.2.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.2"
@@ -124,15 +115,6 @@
           "lib/net461/Indico.Pretrained.Activities.Design.dll": {},
           "lib/net461/Indico.Pretrained.Activities.dll": {},
           "lib/net461/Indico.Pretrained.dll": {}
-        }
-      },
-      "interop.domino.dll/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/_._": {}
-        },
-        "runtime": {
-          "lib/Interop.Domino.dll": {}
         }
       },
       "Microsoft.AspNet.SignalR.Client/2.4.0": {
@@ -149,16 +131,6 @@
         },
         "runtime": {
           "lib/net45/Microsoft.AspNet.SignalR.Client.dll": {}
-        }
-      },
-      "Microsoft.Exchange.WebServices/2.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/40/_._": {}
-        },
-        "runtime": {
-          "lib/40/Microsoft.Exchange.WebServices.Auth.dll": {},
-          "lib/40/Microsoft.Exchange.WebServices.dll": {}
         }
       },
       "Microsoft.Rest.ClientRuntime/2.3.10": {
@@ -271,53 +243,6 @@
             "locale": "ru"
           },
           "lib/net461/ru/UiPath.Excel.resources.dll": {
-            "locale": "ru"
-          }
-        }
-      },
-      "UiPath.Mail.Activities/1.5.0": {
-        "type": "package",
-        "dependencies": {
-          "BouncyCastle": "1.8.1",
-          "Microsoft.Exchange.WebServices": "2.2.0",
-          "interop.domino.dll": "1.0.0"
-        },
-        "compile": {
-          "lib/net452/_._": {}
-        },
-        "runtime": {
-          "lib/net452/MailKit.dll": {},
-          "lib/net452/MimeKit.dll": {},
-          "lib/net452/UiPath.Mail.Activities.Design.dll": {},
-          "lib/net452/UiPath.Mail.Activities.dll": {},
-          "lib/net452/UiPath.Mail.dll": {}
-        },
-        "resource": {
-          "lib/net452/fr/UiPath.Mail.Activities.Design.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/net452/fr/UiPath.Mail.Activities.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/net452/fr/UiPath.Mail.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/net452/ja/UiPath.Mail.Activities.Design.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/net452/ja/UiPath.Mail.Activities.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/net452/ja/UiPath.Mail.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/net452/ru/UiPath.Mail.Activities.Design.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/net452/ru/UiPath.Mail.Activities.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/net452/ru/UiPath.Mail.resources.dll": {
             "locale": "ru"
           }
         }
@@ -464,18 +389,6 @@
         "lib/Net40/ICSharpCode.AvalonEdit.xml"
       ]
     },
-    "BouncyCastle/1.8.1": {
-      "sha512": "nH+P67LavO5EcxjKdBxFfRdfdFhivS3Xp3+0br1KcpCI8DM6ksCWy6YYZjk7XFV+VsHGtkUovwIZ/vmCp42geA==",
-      "type": "package",
-      "path": "bouncycastle/1.8.1",
-      "files": [
-        ".nupkg.metadata",
-        "Readme.txt",
-        "bouncycastle.1.8.1.nupkg.sha512",
-        "bouncycastle.nuspec",
-        "lib/BouncyCastle.Crypto.dll"
-      ]
-    },
     "ClosedXML/0.87.1": {
       "sha512": "2LC0T8bu2G2kt34C4Ig87uZfrRO4MwMVI54e2To7m3DvwAs2Z2Ir86WQuUoW8Txo1uNGSfmu3DpfpQhSX0bIww==",
       "type": "package",
@@ -571,28 +484,17 @@
         "lib/netstandard2.0/Humanizer.xml"
       ]
     },
-    "IndicoPretrained/0.1.7104.23068": {
-      "sha512": "OkpjKm70HY+QfZpxjH8DgMoP/8JJ8m3odReBB+grTGB3Wu02DUNdAHnRKfyFz8qYpwAhl1XvS95QAMN1uevF1Q==",
+    "IndicoPretrained/0.2.1": {
+      "sha512": "rnBADfZ42PRRehLMivYA9XTJgkBJkA89AC+5ZZWshxjfK10ed9zHnezgm4qULHNdRMHp4J/kdHjmtaPnCGWG0g==",
       "type": "package",
-      "path": "indicopretrained/0.1.7104.23068",
+      "path": "indicopretrained/0.2.1",
       "files": [
         ".nupkg.metadata",
-        "indicopretrained.0.1.7104.23068.nupkg.sha512",
+        "indicopretrained.0.2.1.nupkg.sha512",
         "indicopretrained.nuspec",
         "lib/net461/Indico.Pretrained.Activities.Design.dll",
         "lib/net461/Indico.Pretrained.Activities.dll",
         "lib/net461/Indico.Pretrained.dll"
-      ]
-    },
-    "interop.domino.dll/1.0.0": {
-      "sha512": "gKTX8fwrysbgSWSrJUpMpdp/qmRwYT8JTnbpFzTN72WnX3M1vxkHzpxH3oGMSqpHf20n9AZ0TzDJkt2itp6hyQ==",
-      "type": "package",
-      "path": "interop.domino.dll/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        "interop.domino.dll.1.0.0.nupkg.sha512",
-        "interop.domino.dll.nuspec",
-        "lib/Interop.Domino.dll"
       ]
     },
     "Microsoft.AspNet.SignalR.Client/2.4.0": {
@@ -616,25 +518,6 @@
         "lib/netstandard2.0/Microsoft.AspNet.SignalR.Client.xml",
         "microsoft.aspnet.signalr.client.2.4.0.nupkg.sha512",
         "microsoft.aspnet.signalr.client.nuspec"
-      ]
-    },
-    "Microsoft.Exchange.WebServices/2.2.0": {
-      "sha512": "NlkaTD0uWtg9VbiWq0VDWMBPzHFknH3tmstrxt0acrT09LBGqATTjRpsGOODz6tUdX7/dehBinxsf75U5Uw/+A==",
-      "type": "package",
-      "path": "microsoft.exchange.webservices/2.2.0",
-      "files": [
-        ".nupkg.metadata",
-        "doc/License Terms.rtf",
-        "doc/README.htm",
-        "doc/Redist.txt",
-        "lib/40/Microsoft.Exchange.WebServices.Auth.dll",
-        "lib/40/Microsoft.Exchange.WebServices.Auth.pdb",
-        "lib/40/Microsoft.Exchange.WebServices.Auth.xml",
-        "lib/40/Microsoft.Exchange.WebServices.dll",
-        "lib/40/Microsoft.Exchange.WebServices.pdb",
-        "lib/40/Microsoft.Exchange.WebServices.xml",
-        "microsoft.exchange.webservices.2.2.0.nupkg.sha512",
-        "microsoft.exchange.webservices.nuspec"
       ]
     },
     "Microsoft.Rest.ClientRuntime/2.3.10": {
@@ -821,33 +704,6 @@
         "uipath.excel.activities.nuspec"
       ]
     },
-    "UiPath.Mail.Activities/1.5.0": {
-      "sha512": "2Mb0m/a5mdAiX7wkDjEd/ufHtRmvyNoxbITwUyEX9ImM9jRbdPizMX0292oE3ujwShCzziCLfq7DUasLpPwVRA==",
-      "type": "package",
-      "path": "uipath.mail.activities/1.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net452/MailKit.dll",
-        "lib/net452/MailKit.xml",
-        "lib/net452/MimeKit.dll",
-        "lib/net452/MimeKit.xml",
-        "lib/net452/UiPath.Mail.Activities.Design.dll",
-        "lib/net452/UiPath.Mail.Activities.dll",
-        "lib/net452/UiPath.Mail.dll",
-        "lib/net452/fr/UiPath.Mail.Activities.Design.resources.dll",
-        "lib/net452/fr/UiPath.Mail.Activities.resources.dll",
-        "lib/net452/fr/UiPath.Mail.resources.dll",
-        "lib/net452/ja/UiPath.Mail.Activities.Design.resources.dll",
-        "lib/net452/ja/UiPath.Mail.Activities.resources.dll",
-        "lib/net452/ja/UiPath.Mail.resources.dll",
-        "lib/net452/ru/UiPath.Mail.Activities.Design.resources.dll",
-        "lib/net452/ru/UiPath.Mail.Activities.resources.dll",
-        "lib/net452/ru/UiPath.Mail.resources.dll",
-        "uipath.mail.activities.1.5.0.nupkg.sha512",
-        "uipath.mail.activities.nuspec"
-      ]
-    },
     "UiPath.OCR.Contracts/1.0.0": {
       "sha512": "8TtVtfYiZ/lNZTPbkaBQmf/NazOYxgiN0UFuAAFRo3iUShUHnX392z3cOSgp+I6+ydtncwlwy/G7bS46qgu8kQ==",
       "type": "package",
@@ -1032,9 +888,8 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
-      "IndicoPretrained >= 0.1.7104.23068 <= 0.1.7104.23068",
+      "IndicoPretrained >= 0.2.1 <= 0.2.1",
       "UiPath.Excel.Activities >= 2.6.1 <= 2.6.1",
-      "UiPath.Mail.Activities >= 1.5.0 <= 1.5.0",
       "UiPath.System.Activities >= 19.5.0 <= 19.5.0",
       "UiPath.UIAutomation.Activities >= 19.5.0 <= 19.5.0"
     ]
@@ -1056,17 +911,12 @@
           "IndicoPretrained": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[0.1.7104.23068, 0.1.7104.23068]"
+            "version": "[0.2.1, 0.2.1]"
           },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
             "version": "[2.6.1, 2.6.1]"
-          },
-          "UiPath.Mail.Activities": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.5.0, 1.5.0]"
           },
           "UiPath.System.Activities": {
             "include": "Runtime",

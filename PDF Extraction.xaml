@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PDF_Extraction" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="526,1005" sap2010:WorkflowViewState.IdRef="PDF_Extraction_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ip="clr-namespace:Indico.Pretrained;assembly=Indico.Pretrained" xmlns:ipa="clr-namespace:Indico.Pretrained.Activities;assembly=Indico.Pretrained.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PDF_Extraction" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="476,1305" sap2010:WorkflowViewState.IdRef="PDF_Extraction_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ip="clr-namespace:Indico.Pretrained;assembly=Indico.Pretrained" xmlns:ipa="clr-namespace:Indico.Pretrained.Activities;assembly=Indico.Pretrained.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -26,7 +26,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -49,21 +49,20 @@
       <AssemblyReference>Indico.Pretrained</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="486,925" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="436,1225" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="XXX" Name="apiKey" />
       <Variable x:TypeArguments="x:String" Default="samplePdf.pdf" Name="localPdfFile" />
-      <Variable x:TypeArguments="x:String" Name="pdfText" />
-      <Variable x:TypeArguments="scg:List(ip:PDFImage)" Name="pdfImages" />
-      <Variable x:TypeArguments="scg:List(scg:List(s:String[]))" Name="pdfTables" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="pdfMetadata" />
+      <Variable x:TypeArguments="scg:List(ip:PDFPage)" Name="extractedPages" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="pageItr" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="extractedMetadata" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ipa:IndicoWrapper APIKey="[apiKey]" DisplayName="Indico Auth Wrapper" sap:VirtualizedContainerService.HintSize="464,269" sap2010:WorkflowViewState.IdRef="IndicoWrapper_1" IndicoAPIUrl="https://api-coal.indico.io/">
+    <ipa:IndicoWrapper APIKey="[apiKey]" DisplayName="Indico Auth Wrapper" sap:VirtualizedContainerService.HintSize="414,269" sap2010:WorkflowViewState.IdRef="IndicoWrapper_1" IndicoAPIUrl="https://api-demo.indico.io/">
       <ipa:IndicoWrapper.Body>
         <ActivityAction x:TypeArguments="ip:Application">
           <ActivityAction.Argument>
@@ -75,17 +74,18 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ipa:PdfExtractionActivity Data="[localPdfFile]" DisplayName="PDF Extraction" ExtractedImages="[pdfImages]" ExtractedMetadata="[pdfMetadata]" ExtractedTables="[pdfTables]" ExtractedText="[pdfText]" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="PdfExtractionActivity_1" Images="True" Metadata="True" Tables="True" Text="True" />
+            <ipa:PdfExtractionActivity Data="[localPdfFile]" DisplayName="PDF Extraction" ExtractedMetadata="[extractedMetadata]" ExtractedPages="[extractedPages]" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="PdfExtractionActivity_1" Metadata="True" Tables="True" Text="True" />
           </Sequence>
         </ActivityAction>
       </ipa:IndicoWrapper.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ipa:IndicoWrapper>
-    <If Condition="[pdfMetadata.Count&gt;0]" DisplayName="Print Metadata Results" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[extractedMetadata.Count&gt;0]" DisplayName="Print Metadata Results" sap:VirtualizedContainerService.HintSize="414,51" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -93,178 +93,123 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="287,318" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[pdfMetadata]">
-          <ui:ForEach.Body>
-            <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:String)">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" Name="metadata" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="232,185" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <WriteLine DisplayName="Write line" sap:VirtualizedContainerService.HintSize="210,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Key: '&quot;+metadata.Key+&quot;';    Value: '&quot;+metadata.Value+&quot;'&quot;]" />
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEach.Body>
-        </ui:ForEach>
-      </If.Then>
-    </If>
-    <WriteLine DisplayName="Print Excerpt of Text Contents" sap:VirtualizedContainerService.HintSize="464,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;PDF Text Contents:&quot;+ pdfText.Substring(0,500)+&quot;...&quot;]">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </WriteLine>
-    <If Condition="[pdfTables.Count &gt; 0]" DisplayName="Print Extracted Tables" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_3">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <ui:ForEach x:TypeArguments="scg:List(s:String[])" CurrentIndex="{x:Null}" DisplayName="Create Datatables from Pdf Tables" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[pdfTables]">
-          <ui:ForEach.Body>
-            <ActivityAction x:TypeArguments="scg:List(s:String[])">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="scg:List(s:String[])" Name="table" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="309,858" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="sd:DataTable" Name="tmpTable" />
-                  <Variable x:TypeArguments="x:String" Name="tmpTableOutput" />
-                  <Variable x:TypeArguments="x:Int32" Name="rowItr" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="287,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="sd:DataTable">[tmpTable]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Build Columns" sap:VirtualizedContainerService.HintSize="287,280" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[table.ElementAt(0)]">
-                  <ui:ForEach.Body>
-                    <ActivityAction x:TypeArguments="x:String">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="x:String" Name="col" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="222,146" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:AddDataColumn x:TypeArguments="x:Object" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="True" AutoIncrement="False" ColumnName="[col]" DataTable="[tmpTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" MaxLength="100" Unique="False" />
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:ForEach.Body>
+        <Sequence sap:VirtualizedContainerService.HintSize="306.666666666667,552" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="284.666666666667,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="PDF Metadata Found" />
+          <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="284.666666666667,325.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[extractedMetadata]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:String)">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" Name="metadata" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="231.333333333333,186.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </ui:ForEach>
-                <Assign sap:VirtualizedContainerService.HintSize="287,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Int32">[rowItr]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:ForEach x:TypeArguments="s:String[]" CurrentIndex="{x:Null}" DisplayName="Create Rows" sap:VirtualizedContainerService.HintSize="287,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[table]">
-                  <ui:ForEach.Body>
-                    <ActivityAction x:TypeArguments="s:String[]">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="s:String[]" Name="row" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,432" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[rowItr &gt; 0]" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_1">
-                          <If.Then>
-                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[row]" DataTable="[tmpTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                          </If.Then>
-                        </If>
-                        <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Int32">[rowItr]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Int32">[rowItr+1]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:ForEach.Body>
+                  <WriteLine DisplayName="Write line" sap:VirtualizedContainerService.HintSize="209.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Key: '&quot;+metadata.Key+&quot;';    Value: '&quot;+metadata.Value+&quot;'&quot;]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="209.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="No Metadata Found" />
+      </If.Else>
+    </If>
+    <Assign sap:VirtualizedContainerService.HintSize="414,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="ui:GenericValue">[pageItr]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="ui:GenericValue">[1]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEach x:TypeArguments="ip:PDFPage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="414,601" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[extractedPages]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="ip:PDFPage">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ip:PDFPage" Name="page" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="264,467" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="242,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[&quot;PDF Page Found (&quot;+pageItr.ToString+&quot; of &quot;+extractedPages.Count.ToString+&quot;)&quot;]" />
+            <If Condition="[page.text.Length &gt; 0]" DisplayName="Print Excerpt of Text Contents" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="If_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <WriteLine DisplayName="Write exerpt" sap:VirtualizedContainerService.HintSize="209.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Page &quot;+pageItr+&quot; Text Contents: &quot;+ page.text.Substring(0,500)+&quot;...&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </ui:ForEach>
-                <ui:OutputDataTable DataTable="[tmpTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="287,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[tmpTableOutput]" />
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="287,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[tmpTableOutput]" />
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEach.Body>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:ForEach>
-      </If.Then>
-      <If.Else>
-        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="210,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="No extracted tables found!" />
-      </If.Else>
-    </If>
-    <If Condition="[pdfImages.Count &gt; 0]" DisplayName="Print Extracted Images" sap:VirtualizedContainerService.HintSize="464,209" sap2010:WorkflowViewState.IdRef="If_4">
-      <If.Then>
-        <ui:ForEach x:TypeArguments="ip:PDFImage" CurrentIndex="{x:Null}" DisplayName="Print Images" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[pdfImages]">
-          <ui:ForEach.Body>
-            <ActivityAction x:TypeArguments="ip:PDFImage">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="ip:PDFImage" Name="image" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="232,185" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="210,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Image Found: (&quot;+image.filename+&quot;). Data: &quot;+image.data.Substring(0,50)+&quot;...&quot;]" />
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEach.Body>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:ForEach>
-      </If.Then>
-      <If.Else>
-        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="210,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="No Extracted images found!" />
-      </If.Else>
-    </If>
+                </WriteLine>
+              </If.Then>
+            </If>
+            <If Condition="[page.tables.Count &gt; 0]" DisplayName="Process Page Tables" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="If_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="306.666666666667,552" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="284.666666666667,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[&quot;Page &quot;+pageItr+&quot; has &quot;+page.tables.Count.ToString+&quot; tables&quot;]" />
+                  <ui:ForEach x:TypeArguments="ip:PDFTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="284.666666666667,325.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[page.tables]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="ip:PDFTable">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ip:PDFTable" Name="table" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="231.333333333333,186.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="209.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[&quot;Table found with &quot;+table.n_cols.ToString+&quot; cols and &quot;+table.n_rows.ToString+&quot; rows.&quot;]" />
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                  </ui:ForEach>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="209.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[&quot;No tables found on page &quot;+pageItr.ToString]" />
+              </If.Else>
+            </If>
+            <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[pageItr]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[pageItr+1]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
   </Sequence>
 </Activity>
