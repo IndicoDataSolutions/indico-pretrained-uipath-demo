@@ -3,9 +3,8 @@
   "description": "Blank Process",
   "main": "Sentiment Flow Demo.xaml",
   "dependencies": {
-    "IndicoPretrained": "[0.1.7104.23068]",
+    "IndicoPretrained": "[0.2.1]",
     "UiPath.Excel.Activities": "[2.6.1]",
-    "UiPath.Mail.Activities": "[1.5.0]",
     "UiPath.System.Activities": "[19.5.0]",
     "UiPath.UIAutomation.Activities": "[19.5.0]"
   },

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Image_Features" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="526,960" sap2010:WorkflowViewState.IdRef="Image Features_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ip="clr-namespace:Indico.Pretrained;assembly=Indico.Pretrained" xmlns:ipa="clr-namespace:Indico.Pretrained.Activities;assembly=Indico.Pretrained.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Image_Features" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="262,346" sap2010:WorkflowViewState.IdRef="Image Features_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ip="clr-namespace:Indico.Pretrained;assembly=Indico.Pretrained" xmlns:ipa="clr-namespace:Indico.Pretrained.Activities;assembly=Indico.Pretrained.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
@@ -44,7 +44,7 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Image Features" sap:VirtualizedContainerService.HintSize="486,880" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Image Features" sap:VirtualizedContainerService.HintSize="222,266" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="XXX" Name="apiKey" />
       <Variable x:TypeArguments="x:String" Default="sampleImage.jpg" Name="imageFile" />
@@ -56,7 +56,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ipa:IndicoWrapper APIKey="[apiKey]" DisplayName="Indico Auth Wrapper" sap:VirtualizedContainerService.HintSize="464,269" sap2010:WorkflowViewState.IdRef="IndicoWrapper_1" IndicoAPIUrl="https://apiv2.indico.io/">
+    <ipa:IndicoWrapper APIKey="[apiKey]" DisplayName="Indico Auth Wrapper" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="IndicoWrapper_1" IndicoAPIUrl="https://apiv2.indico.io/">
       <ipa:IndicoWrapper.Body>
         <ActivityAction x:TypeArguments="ip:Application">
           <ActivityAction.Argument>
@@ -72,8 +72,21 @@
           </Sequence>
         </ActivityAction>
       </ipa:IndicoWrapper.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ipa:IndicoWrapper>
-    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="464,447" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[counter &lt; 30]">
+    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <DoWhile.Condition>[counter &lt; 30]</DoWhile.Condition>
       <Sequence sap:VirtualizedContainerService.HintSize="264,285" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
