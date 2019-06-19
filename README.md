@@ -23,3 +23,8 @@ This is a demo project showing off the use of indico's pretrained api activities
 * Image Features
 #### Document Extraction
 * PDF Extraction
+* PDF Table Extraction to Excel
+
+### Excel Integration Note
+You will need to enable Trust Settings for this demo to run properly. This checkbox will allow the RPA automation to execute macro for merging cells.
+In Excel go to File -> Options -> Trust Center -> Macro Settings -> (Check) Trust Access to the VBA project object model.
