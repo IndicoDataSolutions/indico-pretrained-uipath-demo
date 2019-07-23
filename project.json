@@ -1,12 +1,13 @@
 {
   "name": "IndicoDemo",
   "description": "Blank Process",
-  "main": "Sentiment Flow Demo.xaml",
+  "main": "IndicoDemo.xaml",
   "dependencies": {
-    "IndicoPretrained": "[0.2.1]",
-    "UiPath.Excel.Activities": "[2.6.1]",
-    "UiPath.System.Activities": "[19.5.0]",
-    "UiPath.UIAutomation.Activities": "[19.5.0]"
+    "Indico.Custom.Activities": "[0.1.0]",
+    "Indico.Pretrained.Activities": "[0.2.2]",
+    "UiPath.Excel.Activities": "[2.6.2]",
+    "UiPath.System.Activities": "[19.7.0]",
+    "UiPath.UIAutomation.Activities": "[19.7.0]"
   },
   "schemaVersion": "3.2",
   "studioVersion": "19.5.0.0",
@@ -20,6 +21,7 @@
     ]
   },
   "projectType": "Workflow",
+  "expressionLanguage": "VisualBasic",
   "libraryOptions": {
     "includeOriginalXaml": false,
     "privateWorkflows": []
